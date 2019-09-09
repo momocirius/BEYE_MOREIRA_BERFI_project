@@ -1,0 +1,13 @@
+{% extends 'index.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <form action="/contact_validate" method="post">
+        {% csrf_token %}
+        {{ form }}
+        <label for="name">Your name: </label>
+        <input id="name" type="text" name="name" value="{{ current_name }}">
+        <input type="submit" value="OK">
+    </form>
+{% endblock %}
